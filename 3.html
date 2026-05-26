@@ -1,0 +1,92 @@
+```html id="k3n7qa"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Cadastro</h2>
+
+    <input type="text" id="nome" placeholder="Digite seu nome">
+
+    <input type="email" id="email" placeholder="Digite seu email">
+
+    <input type="password" id="senha" placeholder="Digite sua senha">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    function cadastrar() {
+      let nome = document.getElementById("nome").value;
+      let email = document.getElementById("email").value;
+      let senha = document.getElementById("senha").value;
+      let resultado = document.getElementById("resultado");
+
+      if (nome === "" || email === "" || senha === "") {
+        resultado.innerText = "Preencha todos os campos";
+      } else if (senha.length < 6) {
+        resultado.innerText = "Senha muito curta";
+      } else {
+        resultado.innerText = "Cadastro realizado com sucesso";
+      }
+    }
+  </script>
+
+</body>
+</html>
+```
